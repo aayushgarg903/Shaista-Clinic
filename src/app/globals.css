@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF9F6;
+  --foreground: #1A2E1C;
+  --font-plus-jakarta: var(--font-plus-jakarta);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: #0E3A2F;
+  --color-forest-light: #154e40;
+  --color-cream: #FAF9F6;
+  --color-lime: #D2FF3A;
+  --color-lime-dark: #b8e02b;
+  
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+  --radius-3xl: 24px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+/* Custom Scrollbar for premium aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #0E3A2F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #154e40;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+  background: rgba(14, 58, 47, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
