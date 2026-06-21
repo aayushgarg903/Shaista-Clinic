@@ -122,7 +122,7 @@ export default function DirectionsPage() {
                   <div className="space-y-1">
                     <h4 className="font-bold text-forest text-sm uppercase">By Bus</h4>
                     <p className="text-xs text-forest/70 font-medium leading-relaxed">
-                      The nearest bus stop is at the Medical College Chowk (Delhi Road), which is only a 3-minute walk from the clinic's main entrance.
+                      The nearest bus stop is at the Medical College Chowk (Delhi Road), which is only a 3-minute walk from the clinic&apos;s main entrance.
                     </p>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Phone, MapPin, Mail, MessageCircle } from 'lucide-react';
 import { CLINIC_CONFIG } from '@/config/clinic';
 
@@ -53,9 +54,9 @@ export default function Footer() {
                 { label: 'Knowledge Hub', href: '/#knowledge-hub' },
               ].map((item, i) => (
                   <li key={i}>
-                    <a href={item.href} className="text-cream/70 hover:text-lime transition-colors text-sm font-medium">
+                    <Link href={item.href} className="text-cream/70 hover:text-lime transition-colors text-sm font-medium">
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -114,7 +115,7 @@ export default function Footer() {
           <div className="pt-8 border-t border-cream/10 text-center text-sm text-cream/50 relative z-10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p>&copy; {new Date().getFullYear()} {CLINIC_CONFIG.displayName}. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="/#faq" className="hover:text-cream transition-colors">FAQ</a>
+              <Link href="/#faq" className="hover:text-cream transition-colors">FAQ</Link>
               <a href={`tel:${CLINIC_CONFIG.phoneRaw}`} className="hover:text-cream transition-colors">Call Us</a>
             </div>
           </div>

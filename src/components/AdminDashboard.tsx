@@ -180,15 +180,27 @@ export default function AdminDashboard({ isOpen, onClose }: AdminDashboardProps)
   const handleExportCSV = () => {
     if (filteredBookings.length === 0) return alert("No bookings to export!");
     
+    // Helper to sanitize for formula injection (CSV injection)
+    const sanitizeForCSV = (val: string): string => {
+      if (!val) return '';
+      // Escape double quotes by doubling them
+      const escaped = val.replace(/"/g, '""');
+      // If the string starts with =, +, -, @, tab, or carriage return, prefix with a single quote
+      if (/^[=\+\-@\t\r]/.test(escaped)) {
+        return `'${escaped}`;
+      }
+      return escaped;
+    };
+
     let csvContent = "data:text/csv;charset=utf-8,";
     csvContent += "ID,Name,Phone,Service,Preferred Date,Contacted,Completed,Created At\n";
     
     filteredBookings.forEach(b => {
       const row = [
         b.id,
-        `"${b.name.replace(/"/g, '""')}"`,
-        `"${b.phone}"`,
-        `"${b.service}"`,
+        `"${sanitizeForCSV(b.name)}"`,
+        `"${sanitizeForCSV(b.phone)}"`,
+        `"${sanitizeForCSV(b.service)}"`,
         b.preferred_date,
         b.contacted ? "YES" : "NO",
         b.completed ? "YES" : "NO",
@@ -362,7 +374,7 @@ export default function AdminDashboard({ isOpen, onClose }: AdminDashboardProps)
                   <Calendar size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] sm:text-xs font-bold uppercase text-forest/70 tracking-wider">Today's Inquiries</p>
+                  <p className="text-[10px] sm:text-xs font-bold uppercase text-forest/70 tracking-wider">Today&apos;s Inquiries</p>
                   <h4 className="text-lg sm:text-2xl font-black text-forest mt-0.5">{todayInquiries}</h4>
                 </div>
               </div>

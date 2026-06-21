@@ -70,10 +70,11 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* Main Portrait image */}
           <div className="relative w-[280px] h-[380px] md:w-[380px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl z-10 border-4 border-cream animate-fade-in">
             <Image 
-              src="/images/clinic/clinic_exterior.jpg" 
-              alt={`${CLINIC_CONFIG.displayName} clinic exterior in ${CLINIC_CONFIG.shortAddress}`} 
+              src="/images/clinic/clinic_staff.jpg" 
+              alt={`${CLINIC_CONFIG.displayName} clinic staff`} 
               fill={true}
               priority={true}
+              quality={100}
               className="object-cover object-top"
             />
           </div>

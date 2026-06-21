@@ -63,7 +63,7 @@ export default function Testimonials() {
             What Our Patients <span className="text-lime bg-forest px-4 py-1 rounded-2xl">Say</span>
           </h2>
           <p className="text-forest/70 max-w-2xl mx-auto font-medium">
-            Don't just take our word for it. Read the experiences of our valued patients who trust us with their smiles.
+            Don&apos;t just take our word for it. Read the experiences of our valued patients who trust us with their smiles.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function Testimonials() {
                   ))}
                 </div>
                 <p className={`text-lg font-medium leading-relaxed ${testimonial.textColor}`}>
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
               </div>
 

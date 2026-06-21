@@ -45,7 +45,7 @@ export default function Features() {
                 Making Dental Visits <span className="text-lime">Pleasant.</span>
               </h2>
               <p className="text-cream/80 text-lg">
-                We've redesigned the dental experience to be as relaxing and efficient as possible.
+                We&apos;ve redesigned the dental experience to be as relaxing and efficient as possible.
               </p>
             </div>
 
